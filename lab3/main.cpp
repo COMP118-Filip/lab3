@@ -19,7 +19,8 @@
 #include<cstdlib>
 #include<ctime>
 using namespace std;
-
+//global variable declaration
+const int VAT = 0.21;
 
 // Function prototypes
 int printMenu();
@@ -38,7 +39,7 @@ void avgOddArray(const int[], const int, int&);
 int main() {
     int choice;
     const int SIZE = 10;
-    const int VAT = 0.21;
+    
 
     // Initialize array price
     int price[SIZE];
