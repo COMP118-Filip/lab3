@@ -123,10 +123,10 @@ void fillInArray(int arr[], const int size){
  * @param size The size of the arrays.
  */
 void multArrays(const int arrQuantity[], const int arrPrice[], int arrTotal[], const int size){
-    assert (size > 0);
+    assert (size > 1);
 
-    for (int i = 0; i <= size; ++i){
-        arrTotal[i] = arrQuantity[i] + arrPrice[i+1];
+    for (int i = 0; i <size; ++i){
+        arrTotal[i] = arrQuantity[i] * arrPrice[i];
     }
 }
 
