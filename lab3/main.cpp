@@ -16,6 +16,8 @@
 
 #include <iostream>
 #include <cassert>
+#include<cstdlib>
+#include<ctime>
 using namespace std;
 
 // Function prototypes
@@ -37,9 +39,17 @@ int main() {
     const int SIZE = 10;
 
     // Initialize array price
-    int price[SIZE] = {12, 4, 8, 1, 17, 2, 4, 2, 9, 1};
+    int price[SIZE];
     // Declare array quantity and total
     int quantity[SIZE], total[SIZE];
+
+
+    srand (time(NULL));
+    
+    for(int i=0;i<SIZE;i++){
+        //fill array with random numbers up to 20
+        quantity[i]=rand()%20; 
+    }
 
     // Interactive menu
     do {
