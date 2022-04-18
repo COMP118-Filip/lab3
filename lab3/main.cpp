@@ -20,6 +20,7 @@
 #include<ctime>
 using namespace std;
 
+
 // Function prototypes
 int printMenu();
 void fillInArray(int[], const int);
@@ -37,6 +38,7 @@ void avgOddArray(const int[], const int, int&);
 int main() {
     int choice;
     const int SIZE = 10;
+    const int VAT = 0.21;
 
     // Initialize array price
     int price[SIZE];
@@ -48,7 +50,7 @@ int main() {
     
     for(int i=0;i<SIZE;i++){
         //fill array with random numbers up to 20
-        quantity[i]=rand()%20; 
+        quantity[i]=rand()%20;
     }
 
     // Interactive menu
@@ -136,7 +138,7 @@ void multArrays(const int arrQuantity[], const int arrPrice[], int arrTotal[], c
     assert (size > 1);
 
     for (int i = 0; i <size; ++i){
-        arrTotal[i] = arrQuantity[i] * arrPrice[i];
+        arrTotal[i] = (arrQuantity[i] * arrPrice[i])*VAT;
     }
 }
 
