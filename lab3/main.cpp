@@ -39,6 +39,7 @@ void avgOddArray(const int[], const int, int&);
 int main() {
     int choice;
     const int SIZE = 10;
+    int averageodd;
     
 
     // Initialize array price
@@ -71,10 +72,28 @@ int main() {
             case 3:
                 displayArray(total, SIZE);
                 break;
-            // Exit
+            // Print sum of odd numbers
             case 4:
-                // No code needed
+                cout<<"The sum of odd numbers is: "<<sumOddArray(total,SIZE);
                 break;
+            // Print if all numbers are positive
+            case 5:
+                if(isAllPositive(total,SIZE)==true){
+                    cout<<"All numbers are positive"<<endl;
+                else{
+                    cout<<"Not all numbers are positive"<<endl;
+                    }
+                }
+                break;
+            // Print average off odd numbers
+            case 6:
+                avgOddArray(total,SIZE,averageodd);
+                cout<<"The avverage of the odd numbers is: "<<averageodd<<endl;
+            break;
+            // Exit
+            case 7:
+            // No code needed
+            break;
             default:
                 assert(true);
         }
@@ -98,15 +117,19 @@ int printMenu(){
         cout << "\n1) Enter quantity";
         cout << "\n2) Calculate total";
         cout << "\n3) Print total";
-        cout << "\n4) Exit";
-
+        cout << "\n4) Print sum of odd numbers";
+        cout << "\n5) Print if all numbers are positive";
+        cout << "\n6) Print average of odd numbers";
+        cout << "\n7) Exit";
+        
         cout << "\nEnter the choice: ";
+        
         cin >> choice;
 
-        if (choice < 1 || choice > 4){
+        if (choice < 1 || choice > 7){
             cout << "\nWrong choice, try again.";
         }
-    } while (choice < 1 || choice > 5);
+    } while (choice < 1 || choice > 8);
     return choice;
 }
 
